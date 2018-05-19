@@ -34,8 +34,23 @@ $(document).on('click',function(){
 })
 */
 
+
+
+/*//或者
+$(clickMe).on('click',function(){
+    $(popover).show()  //显示
+    setTimeout(function(){  //延迟添加  
+   	 	$(document).one('click',function(){
+		$(popover).hide()  //隐藏
+   		})
+	},0)
+})
+*/
+
+
+
 // jQuery  优化  只有show后才监听节省资源
-/*
+
 $(clickMe).on('click',function(){
     $(popover).show()  //显示
     $(document).one('click',function(){
@@ -45,17 +60,3 @@ $(clickMe).on('click',function(){
 $(wrapper).on('click',function(e){
     e.stopPropagation()
 })
-*/
-//或者
-$(clickMe).on('click',function(){
-    $(popover).show()  //显示
-    setTimeout(function(){  //延迟添加  
-   	 	$(document).one('click',function(){
-		$(popover).hide()  //隐藏
-   		})
-	},0)
-})
-
-
-
-
